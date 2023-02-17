@@ -60,13 +60,10 @@ app.get("/comics", async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 });
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log(`Serveur started on port ${PORT}`);
-});
 app.all("*", (req, res) => {
   res.status(400).json({ message: "Page not found" });
+  const PORT = process.env.PORT;
 });
-app.listen(process.env.PORT, () => {});
+app.listen(process.env.PORT, () => {
+  console.log(`Serveur started on port ${PORT}`);
+});
