@@ -63,8 +63,9 @@ app.get("/comics", async (req, res) => {
 });
 app.all("*", (req, res) => {
   res.status(400).json({ message: "Page not found" });
-  const PORT = process.env.PORT;
 });
+const PORT = process.env.PORT;
+
 app.listen(process.env.PORT, () => {
   console.log(`Serveur started on port ${PORT}`);
 });
