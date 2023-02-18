@@ -6,7 +6,8 @@ const app = express();
 app.use(cors());
 
 const userRoutes = require("./routes/user");
-const { default: mongoose } = require("mongoose");
+// const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
 app.use(userRoutes);
